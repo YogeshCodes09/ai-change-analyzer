@@ -1,0 +1,11 @@
+{
+  "change_id": "CHG006",
+  "title": "Add automatic retry for card-production database deadlocks",
+  "description": "Modify card-production database retry logic. When a database deadlock occurs during batch processing, automatically retry the failed database operation up to three times.",
+  "affected_application": "Card Production",
+  "business_criticality": "HIGH",
+  "implementation_plan": "Deploy updated retry logic to the card-production batch processor. Database operations that fail with a deadlock will be retried up to three times before the batch is marked as failed.",
+  "rollback_plan": "Deploy the previous application version if issues are observed after implementation.",
+  "testing_summary": "Test successful card production and verify that processing completes after a simulated database deadlock.",
+  "planned_implementation_date": "2026-09-15"
+}
